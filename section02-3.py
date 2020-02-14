@@ -31,7 +31,7 @@ def scrape_news_list_page(response):
     #tag string
     root = lxml.html.fromstring(response.content)
 
-    for a in root.cssselect('.api_list .api_item a.api_link'):
+    for a in root.xpath('//li[@id="p_main_design_00"]/a[@class="td_a"]'):
         #link
         url = a.get('href')
         # for문 돌면서 하나씩 urls 리스트에 담긴다.

@@ -6,7 +6,7 @@ from urllib.error import URLError, HTTPError
 
 # Download path, filename
 
-path_list = ['f:/test2.jpg', 'f:/index1.html']
+path_list = ['f:/CrawlTest/test2.jpg', 'f:/CrawlTest/index1.html']
 
 # Download resources url
 target_url = ['https://t1.daumcdn.net/thumb/R1000x0/?fname=https://i.imgur.com/VA9n37G.jpg', 'http://gpogle.com']

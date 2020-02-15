@@ -11,7 +11,7 @@ API = 'https://www.mois.go.kr/gpms/view/jsp/rss/rss.jsp'
 
 params = []
 for num in [1001, 1012, 1013, 1014]:
-    params.append(dict(ctxCd=num))
+    params.append(dict(ctxCd=num))  
 
 # 중간 확인
 # print(params)

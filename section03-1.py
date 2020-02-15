@@ -1,5 +1,5 @@
 # section03-1
-# GET
+# GET - ipify
 
 import urllib.request
 from urllib.parse import urlparse

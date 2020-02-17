@@ -16,10 +16,10 @@ def main():
     session = requests.Session()
 
     # scrapping url
-    res = session.get('https://www.naver.com') # GET, POST
+    response = session.get('https://www.naver.com') # GET, POST
 
     # link dictionary     scrape_news_list_page function call
-    urls = scrape_news_list_page(res)
+    urls = scrape_news_list_page(response)
 
     # print dictionary
     # print(urls)
@@ -37,7 +37,7 @@ def scrape_news_list_page(response):
 
     #tag string
     root = fromstring(response.content)
-
+    
     for a in root.xpath('//ul[@class="api_list"]/li[@class="api_item"]/a[@class="api_link"]'):
         # a 구조확인
         # print(a)

@@ -28,7 +28,7 @@ else:
     print(header1)
     print(header2)
 
-    #다운로드 파일 정보
+    # Download file
     print('Filename {}'.format(file1))
     print('Filename {}'.format(file2))
     print()

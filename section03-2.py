@@ -4,14 +4,14 @@
 import urllib.request
 import urllib.parse
 
-#https://library.maastrichtuniversity.nl/librarywall/collections/?_page=4
+# https://library.maastrichtuniversity.nl/librarywall/collections/?_page=4
 # 행정 안전부 https://www.mois.go.kr/
 
 API = 'https://www.mois.go.kr/gpms/view/jsp/rss/rss.jsp'
 
 params = []
 for num in [1001, 1012, 1013, 1014]:
-    params.append(dict(ctxCd=num))  
+    params.append(dict(ctxCd=num))
 
 # 중간 확인
 # print(params)

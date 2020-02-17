@@ -7,11 +7,11 @@ import requests
 
 s = requests.session()
 
-# 100개 요청
-# 텍스트 형태 데이터 가져올때 stream
+# 1 request
+# Text data -> stream
 r = s.get('https://httpbin.org/stream/1', stream=True)
 
-# 수신 확인
+# response
 print(r.text)
 
 # encoding
@@ -24,11 +24,10 @@ print('After Encoding : {}'.format(r.encoding))
 
 
 for line in r.iter_lines(decode_unicode=True):
-    # 라인 출력 후 타입 확인
-    # print(line)
+    # print('lineeeeeeeeee : {}'.format(line))
     # print(type(line))
 
-    #JSON(dict) 변환 후 확인
+    #JSON(dict)
     b = json.loads(line) # String -> dictionary
     print(b)
     # print(type(b))

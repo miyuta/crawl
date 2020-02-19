@@ -7,12 +7,11 @@ from urllib.parse import urlparse
 #request-1
 url = "https://www.amazon.co.jp/"
 
-# urlopen 수신된 정보 저장
+# urlopen -> save
 mem = urllib.request.urlopen(url)
 
-# 여러 정보
 
-# type : <class 'http.client.HTTPResponse'> 종류
+# type : <class 'http.client.HTTPResponse'> 
 print('type : {}'.format(type(mem)))
 
 # geturl : https://www.amazon.co.jp/ url
@@ -42,7 +41,7 @@ print('parse : {}'.format(urlparse('https://www.amazon.co.jp?test=test').query))
 #request-2 ipify Request -> Response
 API = "https://api.ipify.org"
 
-# GET 방식 파라메터
+# GET method parameter
 values = {
     'format' : 'json'
 }
@@ -53,11 +52,11 @@ print('before param : {}'.format(param))
 
 url = API + '?' + param
 
-print('요청 url = {}'.format(url))
+print('request url = {}'.format(url))
 
-# 수신 데이터 읽기
+# response read
 data = urllib.request.urlopen(url).read()
 
-# 수신 데이터 디코딩
+# response decode
 text = data.decode('UTf-8')
 print('response : {}'.format(text))

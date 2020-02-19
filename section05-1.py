@@ -15,7 +15,7 @@ html = """
         <p class="story">Once upon a time there were three little sisters.
             <a href="http://example.com/elsie" class="sister" id="link1">Elsie</a>
             <a href="http://example.com/lacie" class="sister" id="link2">Lacie</a>
-            <a date-io="link3" href="http://example.com/little" class="brother" id="link3">Title</a>
+            <a data-io="link3" href="http://example.com/little" class="sister" id="link3">Title</a>
         </p>
         <p class="story">
             story.....
@@ -69,17 +69,87 @@ soup2 = bs(html, 'html.parser')
 
 # a All Tag
 # link1 = soup2.find_all('a', limit=2)
-link1 = soup2.find_all('a')
+# link1 = soup2.find_all('a')
 
 # type
 # print(type(link1))
 
 # list
-# print('linls : ', link1)
+# print('link : ', link1)
 
 link2 = soup2.find_all('a', class_='sister') # id="link2", string="title", string=["Elsie"]
-link3 = soup2.find_all('a', string=["Elsie"])
-print(link3)
+# link3 = soup2.find_all('a', string=["Elsie"])
+# print(link3)
 
-for t in link2:
-    print(t)
+# for t in link2:
+    # print(t)
+
+
+link3 = soup2.find('a')
+
+# print()
+# print(link3)
+# print(link3.string)
+# print(link3.text)
+
+
+
+# multiful
+link4 = soup2.find("a", {"class":"sister", "data-io": "link3"})
+print()
+print(link4)
+# print(link4.text)
+print(link4.string)
+
+# CSS selector : select, select_one
+# Tag : find, find_all
+# Ex3 select, select_one
+
+link5 = soup.select_one('p.title > b')
+
+print()
+print(link5)
+# print(link5.text)
+print(link5.string)
+
+link6 = soup.select_one("a#link1")
+
+print()
+print(link6)
+
+link7 = soup.select_one('a[data-io="link3"]')
+
+print()
+print(link7) # .class #id  []
+
+# All
+
+link8 = soup.select('p.story > a')  # type: list
+
+print()
+print(link8)
+
+for v in link8:
+    print(v)
+
+
+link9 = soup.select('p.story > a:nth-of-type(2)')
+
+print()
+print(link9)
+
+link10 = soup.select('p.story')
+
+print()
+print(link10)
+print()
+print()
+
+for t in soup.select('p.story'):
+    temp = t.find_all('a')
+    # print(temp)
+    if temp:
+        for v in temp:
+            print(v)
+    else:
+        print(t)

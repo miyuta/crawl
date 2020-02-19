@@ -34,7 +34,8 @@ res = req.urlopen(req.Request(url, headers=headers)).read().decode('UTF-8')
 
 # 응답 데이터 String -> json 변환 및 data 값 출력
 rank_json = json.loads(res)['data']
-print(rank_json)
+# print(type(res))
+# print(rank_json)
 
 # 중간 확인
 # print(rank_json, '\n')
